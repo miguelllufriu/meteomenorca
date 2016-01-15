@@ -1,44 +1,76 @@
-*{
-  padding: 0;
+html,body,.main_container,.row,.data_container,.notice_container,.notices_container,footer{
   margin: 0;
+  padding: 0;
 }
 html{
   background: darkgray;
-  height: 100%;
+  min-height: 100%;
 }
 body{
   height: 100%;
   background: darkgray;
   margin: 0 auto;
 }
-.main_container{
+.central_container{
   max-width; 500px;
-  height: 100%
-  margin: 0 auto;
-}
-.sub_container{
-  max-width: 600px;
-  height: 100%;
-  margin: 0 auto;
+  background-color: white;
 }
 .data_container{
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 3em;
-  padding: 5% 0px;
-  background-color: white;
-  /*-webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -o-border-radius: 10px;
-  border-radius: 10px;*/
-}
-.notice_container{
-  border: 1px solid black; /*BORRAR*/
+  box-sizing: border-box;
+  font-size: 2em;
+  padding: 25px;
 }
 .notices_container{
-  border: 1px solid black; /*BORRAR*/
+  padding: 25px;
+  background-color: white;
 }
-footer{
-
+.notice_container{
+  margin: 0;
+  padding: 25px;
+  height: 200px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  border: 1px solid darkgray; /*BORRAR*/
+}
+#notice1{
+  margin-bottom: 10px;
+}
+footer {
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  height: 60px;
+  padding-top: 3px;
+  padding-left: 10px;
+  background-color: #f5f5f5;
+}
+/*Propiedades para tamaño escritorio*/
+@media (min-width: 760px) {
+  .data_container{
+    padding: 50px 30px;
+  }
+  .central_container{
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+  }
+  .notice_container{
+    height: 200px;
+  }
+  .notices_container{
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+  }
+  footer{
+    position: fixed;
+    bottom: 0;
+  }
 }

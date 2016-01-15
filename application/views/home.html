@@ -4,20 +4,19 @@ $datos = $datosPrincipales->row_array();
 <body>
 <h1>Meteomenorca</h1>
 <section class="row">
-<section class="main_container col-xs-12 col-md-9 row">
-  <section class='sub_container'>
-  <section class="data_container col-xs-12 col-sm-6 col-md-3"><?= $datos['temp'] ?></section>
-  <section class="data_container col-xs-12 col-sm-6 col-md-3"><?= $datos['viento'] ?></section>
-  <section class="data_container col-xs-12 col-sm-6 col-md-3"><?= $datos['dirViento'] ?></section>
-  <section class="data_container col-xs-12 col-sm-6 col-md-3"><?= $datos['presion'] ?></section>
-  <section class="data_container col-xs-12 col-sm-6 col-md-3"><?= $datos['probLluvia'] ?></section>
-  <section class="data_container col-xs-12 col-sm-6 col-md-3"><?= $datos['lluvia'] ?></section>
-  <section class="data_container col-xs-12 col-sm-6 col-md-3"><?= $datos['nubes'] ?></section>
-  <section class="data_container col-xs-12 col-sm-6 col-md-3"><?= $datos['ozono'] ?></section>
-  </section>
+<section class="central_container col-xs-12 col-md-5 col-md-push-2 row">
+  <section class="data_container col-xs-6 col-sm-4"><?= $datos['viento'] ?></section>
+  <section class="data_container col-xs-6 col-sm-4"><?= $datos['temp'] ?></section>
+  <section class="data_container col-xs-6 col-sm-4"><?= $datos['dirViento'] ?></section>
+  <section class="data_container col-xs-6 col-sm-4"><?= $datos['presion'] ?></section>
+  <section class="data_container col-xs-6 col-sm-4"><?= $datos['probLluvia'] ?></section>
+  <section class="data_container col-xs-6 col-sm-4"><?= $datos['lluvia'] ?></section>
+  <section class="data_container col-xs-6 col-sm-4"><?= $datos['nubes'] ?></section>
+  <section class="data_container col-xs-6 col-sm-4"><?= $datos['ozono'] ?></section>
+  <section class="data_container col-xs-12 col-sm-4">ICONO</section>
 </section>
-<aside class="notices_container col-xs-12 col-md-3 row">
-  <section class="notice_container col-xs-12 col-sm-6 col-md-12">noticia 1</section>
+<aside class="notices_container col-xs-12 col-md-3 col-md-push-3 row">
+  <section id="notice1" class="notice_container col-xs-12 col-sm-6 col-md-12">noticia 1</section>
   <section class="notice_container col-xs-12 col-sm-6 col-md-12">noticia 2</section>
 </aside>
 </section>
