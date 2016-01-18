@@ -7,12 +7,27 @@ html{
   min-height: 100%;
 }
 body{
-  height: 100%;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
   background: darkgray;
   margin: 0 auto;
 }
+main {
+    flex: 1 0 auto;
+  }
+nav{
+  background-color: turquoise;
+}
+.row .col{
+  padding: 25px;
+}
+.brand-logo{
+  margin-left: 10px;
+}
 .central_container{
   max-width; 500px;
+  margin-top: 2%;
   background-color: white;
 }
 .data_container{
@@ -25,52 +40,33 @@ body{
 }
 .notices_container{
   padding: 25px;
+  margin-top:  2%;
   background-color: white;
 }
 .notice_container{
   margin: 0;
   padding: 25px;
   height: 200px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -o-border-radius: 10px;
-  border-radius: 10px;
   border: 1px solid darkgray; /*BORRAR*/
 }
 #notice1{
   margin-bottom: 10px;
 }
-footer {
-  width: 100%;
-  position: relative;
-  bottom: 0;
-  height: 60px;
-  padding-top: 3px;
-  padding-left: 10px;
-  background-color: #f5f5f5;
+footer.page-footer{
+  background-color: turquoise;
 }
 /*Propiedades para tamaño escritorio*/
-@media (min-width: 760px) {
+@media (min-width: 600px) {
   .data_container{
     padding: 50px 30px;
   }
   .central_container{
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -o-border-radius: 10px;
-    border-radius: 10px;
+
   }
   .notice_container{
     height: 200px;
   }
   .notices_container{
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -o-border-radius: 10px;
-    border-radius: 10px;
-  }
-  footer{
-    position: fixed;
-    bottom: 0;
+
   }
 }
