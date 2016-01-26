@@ -1,5 +1,16 @@
 <?php
+
 $datos = $datosPrincipales->row_array();
+
+$viento = $datos['viento'];
+$temp = $datos['temp'];
+$dirViento = $datos['dirViento'];
+$presion = $datos['presion'];
+$probLluvia = $datos['probLluvia'];
+$lluvia = $datos['lluvia'] / 0.0394;
+$nubes = $datos['nubes'];
+$humedad = $datos['humedad'];
+
 ?>
 <body>
   <main>
@@ -21,15 +32,15 @@ $datos = $datosPrincipales->row_array();
 </nav>
 <section class="row">
 <section class="central_container col s12 m6 l5 push-m1 push-l2 row">
-  <section class="data_container col s12 m4">ICONO</section>
-  <section class="data_container col s6 m4"><?= $datos['viento'] ?></section>
-  <section class="data_container col s6 m4"><?= $datos['temp'] ?></section>
-  <section class="data_container col s6 m4"><?= $datos['dirViento'] ?></section>
-  <section class="data_container col s6 m4"><?= $datos['presion'] ?></section>
-  <section class="data_container col s6 m4"><?= $datos['probLluvia'] ?></section>
-  <section class="data_container col s6 m4"><?= $datos['lluvia'] ?></section>
-  <section class="data_container col s6 m4"><?= $datos['nubes'] ?></section>
-  <section class="data_container col s6 m4"><?= $datos['ozono'] ?></section>
+  <section class="data_container col s12 m4" id="icono"><img src="assets/images/sol.png"/ alt="icono"></section>
+  <section class="data_container col s6 m4"><?= $viento ?></section>
+  <section class="data_container col s6 m4"><?= $temp ?></section>
+  <section class="data_container col s6 m4"><?= $dirViento ?></section>
+  <section class="data_container col s6 m4"><?= $presion ?></section>
+  <section class="data_container col s6 m4"><?= $probLluvia ?></section>
+  <section class="data_container col s6 m4"><?= $lluvia ?></section>
+  <section class="data_container col s6 m4"><?= $nubes ?></section>
+  <section class="data_container col s6 m4"><?= $humedad ?></section>
 </section>
 <aside class="notices_container col s12 m3 push-m2 push-l3 row">
   <section id="notice1" class="notice_container col s12">noticia 1</section>

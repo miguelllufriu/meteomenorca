@@ -5,12 +5,15 @@ html,body,.main_container,.row,.data_container,.notice_container,.notices_contai
 html{
   background: darkgray;
   min-height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 body{
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background: darkgray;
   margin: 0 auto;
 }
 main {
@@ -37,6 +40,9 @@ nav{
   box-sizing: border-box;
   font-size: 2em;
   padding: 25px;
+}
+.data_container#icono{
+  padding: 0;
 }
 .notices_container{
   padding: 25px;
