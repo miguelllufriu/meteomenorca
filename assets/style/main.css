@@ -20,7 +20,7 @@ main {
     flex: 1 0 auto;
   }
 nav{
-  background-color: turquoise;
+  background-color: #00bcd4;
 }
 .row .col{
   padding: 25px;
@@ -59,7 +59,7 @@ nav{
   margin-bottom: 10px;
 }
 footer.page-footer{
-  background-color: turquoise;
+  background-color: #00bcd4;
 }
 /*Propiedades para tamaño escritorio*/
 @media (min-width: 600px) {
