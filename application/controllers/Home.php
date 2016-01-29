@@ -14,6 +14,7 @@ class Home extends CI_Controller {
 	{
 		$datos['datosPrincipales'] = $this->home_model->getUltimoRegistro();
 		$this->load->view('templates/header.html');
+		$this->load->view('templates/navbar.html');
 		$this->load->view('home.html',$datos);
 		$this->load->view('templates/footer.html');
 	}

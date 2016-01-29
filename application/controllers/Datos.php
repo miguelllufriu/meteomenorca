@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Data extends CI_Controller {
+class Datos extends CI_Controller {
 
 	function __construct()
 	{
@@ -13,6 +13,7 @@ class Data extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('templates/header.html');
+		$this->load->view('templates/navbar.html');
 		$this->load->view('datos.html');
 		$this->load->view('templates/footer.html');
 	}

@@ -53,7 +53,10 @@ nav{
   margin: 0;
   padding: 25px;
   height: 200px;
-  border: 1px solid darkgray; /*BORRAR*/
+}
+.notice_container h6{
+  border-left: 10px solid #00bcd4;
+  line-height: 5em;
 }
 #notice1{
   margin-bottom: 10px;
