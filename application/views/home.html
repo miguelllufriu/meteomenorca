@@ -18,8 +18,8 @@ $humedad = $datos['humedad'];
   <a href="#" class="brand-logo">Meteomenorca</a>
   <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Datos</a></li>
+          <li><a href="<?= base_url() ?>">Inicio</a></li>
+          <li><a href="<?= base_url() ?>index.php/Data">Datos</a></li>
           <li><a href="#">Noticias</a></li>
           <li><a href="#">Contacto</a></li>
       </ul>
@@ -32,7 +32,7 @@ $humedad = $datos['humedad'];
 </nav>
 <section class="row">
 <section class="central_container col s12 m6 l5 push-m1 push-l2 row">
-  <section class="data_container col s12 m4" id="icono"><img src="assets/images/iconosTiempo/sun.png"/ alt="icono" width="45%" height="45%"></section>
+  <section class="data_container col s12 m4" id="icono"><img src="<?= base_url() ?>assets/images/iconosTiempo/sun.png"/ alt="icono" width="35%" height="35%"></section>
   <section class="data_container col s6 m4"><?= $viento ?></section>
   <section class="data_container col s6 m4"><?= $temp ?></section>
   <section class="data_container col s6 m4"><?= $dirViento ?></section>
@@ -48,4 +48,3 @@ $humedad = $datos['humedad'];
 </aside>
 </section>
 </main>
-</body>
