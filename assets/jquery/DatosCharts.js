@@ -92,10 +92,7 @@ Chart.defaults.global = {
     onAnimationComplete: function(){}
 }
 
-var ctx = $("#1").get(0).getContext("2d");
-var chart1 = new Chart(ctx).Line(data);
-
-var ctx2 = $("#2").get(0).getContext("2d");
+/*var ctx2 = $("#2").get(0).getContext("2d");
 var chart2 = new Chart(ctx2).Line(data);
 
 var ctx3 = $("#3").get(0).getContext("2d");
@@ -103,5 +100,4 @@ var chart3 = new Chart(ctx3).Line(data);
 
 var ctx4 = $("#4").get(0).getContext("2d");
 var chart4 = new Chart(ctx4).Line(data);
-
-chart1.addData([60], "dfal");
+*/

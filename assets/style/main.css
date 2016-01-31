@@ -113,8 +113,8 @@ footer.page-footer{
   margin: 0 auto;
 }
 .grafica{
-
+  color: white;
 }
 canvas{
-  min-height: 150px;
+  max-height: 250px;
 }
