@@ -47,6 +47,7 @@ nav{
   padding: 0;
 }
 .notices_container{
+  font-size: 0.9em;
   background-color: rgba(255, 255, 255, 0.5);
   height: 100%
 }
@@ -85,10 +86,10 @@ footer.page-footer{
 
   }
   .notice_container{
-    height: 200px;
+    max-height: 200px;
   }
   .notices_container{
-
+    margin-top: 1.5%;
   }
 }
 @media (max-width: 480px){
@@ -104,5 +105,16 @@ footer.page-footer{
   aside{
     margin: 25px;
   }
+}
+/*---------------------------------------------------*/
+.grafica_container{
+  height: 100%;
+  width: 95%;
+  margin: 0 auto;
+}
+.grafica{
 
+}
+canvas{
+  min-height: 150px;
 }

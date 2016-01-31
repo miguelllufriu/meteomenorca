@@ -1,4 +1,41 @@
-<section class="row">
-
+<section class="row grafica_container">
+<section class="col s12 l6 grafica">
+<canvas id="1"></canvas>
 </section>
-</main>
+<section class="col s12 l6 grafica">
+<canvas id="2"></canvas>
+</section>
+<section class="col s12 l6 grafica">
+<canvas id="3"></canvas>
+</section>
+<section class="col s12 l6 grafica">
+<canvas id="4"></canvas>
+</section>
+</section>
+<script>
+var data = {
+    labels: [""],
+    datasets: [
+        {
+            label: "My First dataset",
+            fillColor: "rgba(220,220,220,0.2)",
+            strokeColor: "rgba(220,220,220,1)",
+            pointColor: "rgba(220,220,220,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: []
+        },
+        /*{
+            label: "My Second dataset",
+            fillColor: "rgba(151,187,205,0.2)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            data: [28, 48, 40, 19, 86, 27, 90]
+        }*/
+    ]
+};
+</script>

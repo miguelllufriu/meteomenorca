@@ -15,7 +15,7 @@ class Datos extends CI_Controller {
 		$this->load->view('templates/header.html');
 		$this->load->view('templates/navbar.html');
 		$this->load->view('datos.html');
-		$this->load->view('templates/footer.html');
+		$this->load->view('templates/footerCharts.html');
 	}
 }
 ?>
