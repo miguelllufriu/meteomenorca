@@ -13,20 +13,32 @@ $humedad = $datos['humedad'];
 
 ?>
 <section class="row">
-<section class="central_container col s12 m6 l5 push-m1 push-l2 row">
-  <section class="data_container col s12 m4" id="icono"><img src="<?= base_url() ?>assets/images/iconosTiempo/sun.png"/ alt="icono" class="responsive-img" width="35%"></section>
-  <section class="data_container col s6 m4"><?= $viento ?></section>
-  <section class="data_container col s6 m4"><?= $temp ?></section>
-  <section class="data_container col s6 m4"><?= $dirViento ?></section>
-  <section class="data_container col s6 m4"><?= $presion ?></section>
+<section class="central_container col s12 m10 l5 push-m1 push-l1 row">
+  <section class="data_container col s12" id="icono"><img src="<?= base_url() ?>assets/images/iconosTiempo/sun.png"/ alt="icono" class="responsive-img" width="40%"></section>
+  <section class="data_container col s4"><h3><?= $temp ?><span style="font-size:12px">ºC</span></h3></section>
+  <section class="data_container col s4"><h3><?= $dirViento ?></h3></section>
+  <section class="data_container col s4"><h3><?= $viento ?><span style="font-size:12px">km/h</span></h3></section>
+  <section class="data_container col s4"><h4><?= $humedad ?><span style="font-size:12px">%</span></h4></section>
+  <section class="data_container col s4"><h4><?= round($presion) ?><span style="font-size:12px">hPa</span></h4></section>
+  <section class="data_container col s4"><h4><?= $lluvia ?><span style="font-size:12px">mm</span></h4></section>
+  </section>
+  <!--<section class="data_container col s6 m4"><?= $presion ?></section>
   <section class="data_container col s6 m4"><?= $probLluvia ?></section>
   <section class="data_container col s6 m4"><?= $lluvia ?></section>
   <section class="data_container col s6 m4"><?= $nubes ?></section>
-  <section class="data_container col s6 m4"><?= $humedad ?></section>
-</section>
-<aside class="notices_container col s12 m3 push-m2 push-l3 row">
-  <section id="notice1" class="notice_container col s12"><h6>Noticia1</h6></section>
-  <section class="notice_container col s12"><h6>Noticia1</h6></section>
+  <section class="data_container col s6 m4"><?= $humedad ?></section>-->
+<aside class="notices_container col s12 m8 l4 push-m2 push-l1 row">
+  <a href="#"><section id="notice1" class="notice_container col s12 hoverable">
+    <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h5>
+    <section class="notice_body truncate">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </section>
+  </section></a>
+  <a href="#"><section class="notice_container col s12 hoverable">
+    <h5>Noticia1</h5>
+    <section class="notice_body truncate">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </section>
+  </section></a>
 </aside>
 </section>
-</main>
