@@ -199,21 +199,21 @@ foreach($tempUltimoDia as $data):
 <?php
 endforeach;
 foreach($vientoUltimoDia as $data2):
-  $epoch = $data->epoch;
+  $epoch = $data2->epoch;
   $time = new DateTime("@$epoch");
 ?>
   chart2.addData([<?php echo $data2->viento; ?>],"<?php echo $time->format('H:i'); ?>");
 <?php
 endforeach;
 foreach($dirVientoUltimoDia as $data3):
-  $epoch = $data->epoch;
+  $epoch = $data3->epoch;
   $time = new DateTime("@$epoch");
 ?>
   chart3.addData([<?php echo $data3->dirViento; ?>],"<?php echo $time->format('H:i'); ?>");
 <?php
 endforeach;
 foreach($presionUltimoDia as $data4):
-  $epoch = $data->epoch;
+  $epoch = $data4->epoch;
   $time = new DateTime("@$epoch");
 ?>
   chart4.addData([<?php echo $data4->presion; ?>],"<?php echo $time->format('H:i'); ?>");
