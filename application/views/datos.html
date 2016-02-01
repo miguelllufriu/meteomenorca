@@ -17,8 +17,9 @@
 </section>
 </section>
 <script type="text/javascript" src='<?= base_url() ?>assets/jquery/jquery.js'></script>
-<script type="text/javascript" src='<?= base_url() ?>assets/jquery/Chart.js'></script>
+<script type="text/javascript" src='<?= base_url() ?>assets/jquery/Chart.min.js'></script>
 <script>
+
 Chart.defaults.global = {
     // Boolean - Whether to animate the chart
     animation: true,
@@ -106,14 +107,14 @@ Chart.defaults.global = {
     // String - Template string for single tooltips
     tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>",
     // String - Template string for multiple tooltips
-    multiTooltipTemplate: "<%= datasetLabel %> - <%= value %>",
+    multiTooltipTemplate: "<%= value %>",
     // Function - Will fire on animation progression.
     onAnimationProgress: function(){},
     // Function - Will fire on animation completion.
     onAnimationComplete: function(){}
 }
 var data = {
-    labels: [""],
+    labels: [],
     datasets: [
         {
             label: "Temperatura",
@@ -129,7 +130,7 @@ var data = {
 };
 
 var data2 = {
-    labels: [""],
+    labels: [],
     datasets: [
         {
             label: "Viento",
@@ -144,7 +145,7 @@ var data2 = {
     ]
 };
 var data3 = {
-    labels: [""],
+    labels: [],
     datasets: [
         {
             label: "Direccion Viento",
@@ -159,7 +160,7 @@ var data3 = {
     ]
 };
 var data4 = {
-    labels: [""],
+    labels: [],
     datasets: [
         {
             label: "Presion",
@@ -178,7 +179,14 @@ var chart1 = new Chart(ctx).Line(data);
 var ctx1 = $("#2").get(0).getContext("2d");
 var chart2 = new Chart(ctx1).Line(data2);
 var ctx2 = $("#3").get(0).getContext("2d");
-var chart3 = new Chart(ctx2).Line(data3);
+var chart3 = new Chart(ctx2).Line(data3, {
+        responsive : true,
+        scaleOverride : true,
+        scaleSteps : 10,
+        scaleStepWidth : 36,
+        scaleStartValue : 0,
+        showXLabels: 3
+    });
 var ctx3 = $("#4").get(0).getContext("2d");
 var chart4 = new Chart(ctx3).Line(data4);
 
