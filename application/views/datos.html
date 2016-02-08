@@ -191,28 +191,28 @@ var ctx3 = $("#4").get(0).getContext("2d");
 var chart4 = new Chart(ctx3).Line(data4);
 
 <?php
-foreach($tempUltimoDia as $data):
+foreach(array_reverse($tempUltimoDia) as $data):
   $epoch = $data->epoch;
   $time = new DateTime("@$epoch");
 ?>
   chart1.addData([<?php echo $data->temp; ?>],"<?php echo $time->format('H:i'); ?>");
 <?php
 endforeach;
-foreach($vientoUltimoDia as $data2):
+foreach(array_reverse($vientoUltimoDia) as $data2):
   $epoch = $data2->epoch;
   $time = new DateTime("@$epoch");
 ?>
   chart2.addData([<?php echo $data2->viento; ?>],"<?php echo $time->format('H:i'); ?>");
 <?php
 endforeach;
-foreach($dirVientoUltimoDia as $data3):
+foreach(array_reverse($dirVientoUltimoDia) as $data3):
   $epoch = $data3->epoch;
   $time = new DateTime("@$epoch");
 ?>
   chart3.addData([<?php echo $data3->dirViento; ?>],"<?php echo $time->format('H:i'); ?>");
 <?php
 endforeach;
-foreach($presionUltimoDia as $data4):
+foreach(array_reverse($presionUltimoDia) as $data4):
   $epoch = $data4->epoch;
   $time = new DateTime("@$epoch");
 ?>
