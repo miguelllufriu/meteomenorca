@@ -16,7 +16,7 @@ $humedad = $datos['humedad'];
 <section class="central_container col s12 m10 l5 push-m1 push-l1 row">
   <section class="data_container col s12" id="icono"><img src="<?= base_url() ?>assets/images/iconosTiempo/sun.png"/ alt="icono" class="responsive-img" width="40%"></section>
   <section class="data_container col s4"><h3><?= $temp ?><span style="font-size:12px">ºC</span></h3></section>
-  <section class="data_container col s4" id="dirViento"><img src="<?= base_url() ?>assets/images/arrow.png" alt="icono" class="responsive-img" width="35%" id="arrowViento"/><h3 id=valDirViento><?= $dirViento ?></h3></section>
+  <section class="data_container col s4" id="dirViento"><img src="<?= base_url() ?>assets/images/arrow.png" alt="icono" class="responsive-img" width="100%" style="max-width:50px;max-height:50px;" id="arrowViento"/><h3 id=valDirViento><?= $dirViento ?></h3></section>
   <section class="data_container col s4"><h3><?= $viento ?><span style="font-size:12px">km/h</span></h3></section>
   <section class="data_container col s4"><h4><?= $humedad ?><span style="font-size:12px">%</span></h4></section>
   <section class="data_container col s4"><h4><?= round($presion) ?><span style="font-size:12px">hPa</span></h4></section>

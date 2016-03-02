@@ -197,3 +197,6 @@ textarea{
   margin-right: 15px;
   background-color: rgb(58, 33, 143);
 }
+.inputContacto{
+  padding: 25px !important;
+}

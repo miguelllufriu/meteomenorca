@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '192.168.0.170',
-	'username' => 'meteomenorca',
-	'password' => '588866miguel1990.&"))))7789abcdjijijaja**^¨',
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '',
 	'database' => 'beta_meteomenorca',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
