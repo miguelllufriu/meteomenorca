@@ -10,7 +10,7 @@ class Datos_model extends CI_Model {
 
 	public function getTempUltimoDia()
 	{
-    $query = $this->db->query("SELECT epoch,temp FROM `currently_data` ORDER BY epoch DESC LIMIT 24");
+    $query = $this->db->query("SELECT data,temp FROM `currently_data` ORDER BY data DESC LIMIT 24");
     if ($query->num_rows() > 0)
     {
     return $query->result();
@@ -22,7 +22,7 @@ class Datos_model extends CI_Model {
 	}
   public function getVientoUltimoDia()
   {
-    $query = $this->db->query("SELECT epoch,viento FROM `currently_data` ORDER BY epoch DESC LIMIT 24");
+    $query = $this->db->query("SELECT data,viento FROM `currently_data` ORDER BY data DESC LIMIT 24");
     if ($query->num_rows() > 0)
     {
     return $query->result();
@@ -34,7 +34,7 @@ class Datos_model extends CI_Model {
   }
   public function getDirUltimoDia()
   {
-    $query = $this->db->query("SELECT epoch,dirViento FROM `currently_data` ORDER BY epoch DESC LIMIT 24");
+    $query = $this->db->query("SELECT data,dirViento FROM `currently_data` ORDER BY data DESC LIMIT 24");
     if ($query->num_rows() > 0)
     {
     return $query->result();
@@ -46,7 +46,7 @@ class Datos_model extends CI_Model {
   }
   public function getPresionUltimoDia()
   {
-    $query = $this->db->query("SELECT epoch,presion FROM `currently_data` ORDER BY epoch DESC LIMIT 24");
+    $query = $this->db->query("SELECT data,presion FROM `currently_data` ORDER BY data DESC LIMIT 24");
     if ($query->num_rows() > 0)
     {
     return $query->result();

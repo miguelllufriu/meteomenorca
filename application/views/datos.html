@@ -175,48 +175,65 @@ var data4 = {
     ]
 };
 var ctx = $("#1").get(0).getContext("2d");
-var chart1 = new Chart(ctx).Line(data);
+var chart1 = new Chart(ctx).Line(data,{
+  responsive : true,
+  scaleOverride : true,
+  scaleSteps : 10,
+  scaleStepWidth : 4,
+  scaleStartValue : 0
+});
 var ctx1 = $("#2").get(0).getContext("2d");
-var chart2 = new Chart(ctx1).Line(data2);
+var chart2 = new Chart(ctx1).Line(data2,{
+  responsive : true,
+  scaleOverride : true,
+  scaleSteps : 10,
+  scaleStepWidth : 10,
+  scaleStartValue : 0
+});
 var ctx2 = $("#3").get(0).getContext("2d");
 var chart3 = new Chart(ctx2).Line(data3, {
         responsive : true,
         scaleOverride : true,
         scaleSteps : 10,
         scaleStepWidth : 36,
-        scaleStartValue : 0,
-        showXLabels: 3
+        scaleStartValue : 0
     });
 var ctx3 = $("#4").get(0).getContext("2d");
-var chart4 = new Chart(ctx3).Line(data4);
+var chart4 = new Chart(ctx3).Line(data4,{
+  responsive : true,
+  scaleOverride : true,
+  scaleSteps : 12,
+  scaleStepWidth : 5,
+  scaleStartValue : 980
+});
 
 <?php
 foreach(array_reverse($tempUltimoDia) as $data):
-  $epoch = $data->epoch;
-  $time = new DateTime("@$epoch");
+  $epoch = date("H:i",strtotime($data->data));
+  //$time = new DateTime("@$epoch");
 ?>
-  chart1.addData([<?php echo $data->temp; ?>],"<?php echo $time->format('H:i'); ?>");
+  chart1.addData([<?php echo $data->temp; ?>],"<?php echo $epoch; ?>");
 <?php
 endforeach;
 foreach(array_reverse($vientoUltimoDia) as $data2):
-  $epoch = $data2->epoch;
-  $time = new DateTime("@$epoch");
+  $epoch = date("H:i",strtotime($data2->data));
+  //$time = new DateTime("@$epoch");
 ?>
-  chart2.addData([<?php echo $data2->viento; ?>],"<?php echo $time->format('H:i'); ?>");
+  chart2.addData([<?php echo $data2->viento; ?>],"<?php echo $epoch; ?>");
 <?php
 endforeach;
 foreach(array_reverse($dirVientoUltimoDia) as $data3):
-  $epoch = $data3->epoch;
-  $time = new DateTime("@$epoch");
+  $epoch = date("H:i",strtotime($data3->data));
+  //$time = new DateTime("@$epoch");
 ?>
-  chart3.addData([<?php echo $data3->dirViento; ?>],"<?php echo $time->format('H:i'); ?>");
+  chart3.addData([<?php echo $data3->dirViento; ?>],"<?php echo $epoch; ?>");
 <?php
 endforeach;
 foreach(array_reverse($presionUltimoDia) as $data4):
-  $epoch = $data4->epoch;
-  $time = new DateTime("@$epoch");
+  $epoch = date("H:i",strtotime($data4->data));
+  //$time = new DateTime("@$epoch");
 ?>
-  chart4.addData([<?php echo $data4->presion; ?>],"<?php echo $time->format('H:i'); ?>");
+  chart4.addData([<?php echo $data4->presion; ?>],"<?php echo $epoch; ?>");
 <?php
 endforeach;
 ?>

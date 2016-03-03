@@ -8,32 +8,114 @@ $dirViento = $datos['dirViento'];
 $presion = $datos['presion'];
 $probLluvia = $datos['probLluvia'];
 $lluvia = $datos['lluvia'] / 0.0394;
-$nubes = $datos['nubes'];
 $humedad = $datos['humedad'];
+$icono = $datos['icono'];
 
 ?>
 <section class="row">
 <section class="central_container col s12 m10 l5 push-m1 push-l1 row">
-  <section class="data_container col s12" id="icono"><img src="<?= base_url() ?>assets/images/iconosTiempo/sun.png"/ alt="icono" class="responsive-img" width="40%"></section>
+  <section class="data_container col s12" id="icono"><img src="<?= base_url() ?>assets/images/iconosTiempo/<?= $icono ?>.png"/ alt="icono" class="responsive-img" width="40%"></section>
   <section class="data_container col s4"><h3><?= $temp ?><span style="font-size:12px">ºC</span></h3></section>
   <section class="data_container col s4" id="dirViento"><img src="<?= base_url() ?>assets/images/arrow.png" alt="icono" class="responsive-img" width="100%" style="max-width:50px;max-height:50px;" id="arrowViento"/><h3 id=valDirViento><?= $dirViento ?></h3></section>
   <section class="data_container col s4"><h3><?= $viento ?><span style="font-size:12px">km/h</span></h3></section>
   <section class="data_container col s4"><h4><?= $humedad ?><span style="font-size:12px">%</span></h4></section>
   <section class="data_container col s4"><h4><?= round($presion) ?><span style="font-size:12px">hPa</span></h4></section>
-  <section class="data_container col s4"><h4><?= $lluvia ?><span style="font-size:12px">mm</span></h4></section>
+  <section class="data_container col s4"><h4><?= round($lluvia,3, PHP_ROUND_HALF_UP) ?><span style="font-size:12px">mm</span></h4></section>
 </section>
-<aside class="notices_container col s12 m8 l4 push-m2 push-l2 row">
-  <a href="#"><section id="notice1" class="notice_container col s12 hoverable">
-    <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h5>
-    <section class="notice_body truncate">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<aside class="generalPred_container col s12 m10 l5 push-m1 push-l1 row">
+  <section id="daily_pred" class="pred_container col s12">
+    <section class="col s1">
+      <p>
+        adsflkasdf
+      </p>
     </section>
-  </section></a>
-  <a href="#"><section class="notice_container col s12 hoverable">
-    <h5>Noticia1</h5>
-    <section class="notice_body truncate">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <section class="col s1">
+      <p>
+        adsflkasdf
+      </p>
     </section>
-  </section></a>
+    <section class="col s1">
+      <p>
+        adsflkasdf
+      </p>
+    </section>
+    <section class="col s1">
+      <p>
+        adsflkasdf
+      </p>
+    </section>
+    <section class="col s1">
+      <p>
+        adsflkasdf
+      </p>
+    </section>
+    <section class="col s1">
+      <p>
+        adsflkasdf
+      </p>
+    </section>
+    <section class="col s1">
+      <p>
+        adsflkasdf
+      </p>
+    </section>
+    <section class="col s1">
+      <p>
+        adsflkasdf
+      </p>
+    </section>
+    <section class="col s1">
+      <p>
+        adsflkasdf
+      </p>
+    </section>
+    <section class="col s1">
+      <p>
+        adsflkasdf
+      </p>
+    </section>
+    <section class="col s1">
+      <p>
+        adsflkasdf
+      </p>
+    </section>
+    <section class="col s1">
+      <p>
+        adsflkasdf
+      </p>
+    </section>
+  </section>
+  <section class="pred_container col s12">
+    <section class="col s1">
+      <p>
+        adsflkasdf
+      </p>
+    </section>
+    <section class="col s1">
+      <p>
+        adsflkasdf
+      </p>
+    </section>
+    <section class="col s1">
+      <p>
+        adsflkasdf
+      </p>
+    </section>
+    <section class="col s1">
+      <p>
+        adsflkasdf
+      </p>
+    </section>
+    <section class="col s1">
+      <p>
+        adsflkasdf
+      </p>
+    </section>
+    <section class="col s1">
+      <p>
+        adsflkasdf
+      </p>
+    </section>
+  </section>
 </aside>
 </section>
