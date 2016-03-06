@@ -2,14 +2,19 @@ $( document ).ready(function(){
 
     /*Predefinido por materialize para inicializar menu en disp. móviles*/
    $(".button-collapse").sideNav();
+   $('select').material_select();
    /*Imagen de fondo según hora del día*/
    $('html').css('background', 'url(assets/images/'+ponerFondoSegunHora()+'.jpg) no-repeat center center fixed');
 
    $.backstretch("assets/images/dia.jpg",{speed: 150});
    /*Según los grados del viento, la "arrow" señalará hacia la correspondiente dirección*/
    rotarFlechaDireccionViento();
+
+   /*Según ancho pantalla nos modificará las clases del cuadro de predicciones para mejor experiencia visual*/
+   compruebaAnchoNavegador();
 })
 
+//NO TOCAR, MAS ADELANTE SE UTILIZARÁ PARA ALTERAR ESTILO DE LA WEB SEGÚN HORA DEL DÍA
 function ponerFondoSegunHora(){
   var img = "";
   var temps = new Date();
@@ -28,7 +33,7 @@ function ponerFondoSegunHora(){
     return "dia";
   }
 }
-
+////////////////////////////////////////////////////////////////////////////////////////
 function rotarFlechaDireccionViento(){
   var grados = +($('#valDirViento').text());
   $('#valDirViento').remove();
@@ -62,5 +67,12 @@ function rotarFlechaDireccionViento(){
   $('#valDirViento07').remove();
   var gradosTotales07 = 180 + grados07;
   $('#arrowViento07').css({"-ms-transform":"rotate("+gradosTotales07+"deg)","-webkit-transform":"rotate("+gradosTotales07+"deg)","transform":"rotate("+gradosTotales07+"deg)"});
+}
 
+function compruebaAnchoNavegador(){
+     var ancho = $(window).width();
+     if (ancho < 1450){
+       $('#generalPred_container').addClass('l7');
+       $('#generalPred_container').removeClass('l6');
+     }
 }

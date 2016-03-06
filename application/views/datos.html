@@ -1,4 +1,9 @@
 <section class="row container grafica_container">
+  <section class="col s12 l10 push-l1">
+    <h5 style="text-align:center;color:white">HISTÓRICO</h5>
+  <p style="text-align:justify;color:white">Aquí puede visualizar los datos históricos de la localización seleccionada, desde las últimas 2 horas hasta
+  los últimos 2 años. Todos los datos aquí mostrados son los que nos proporciona cada estación de Meteomenorca y la API de <a href="http://forecast.io">forecast.io</a></p>
+  </section>
 <section class="col s12 l6 grafica">
   <h5>Temperatura</h5>
 <canvas id="1"></canvas>
@@ -15,225 +20,31 @@
   <h5>Presion</h5>
 <canvas id="4"></canvas>
 </section>
+<section class="col s12 l6 grafica">
+  <h5>Humedad</h5>
+<canvas id="5"></canvas>
+</section>
+<section class="col s12 l6 grafica">
+  <h5>Lluvia</h5>
+<canvas id="6"></canvas>
+</section>
 </section>
 <script type="text/javascript" src='<?= base_url() ?>assets/jquery/jquery.js'></script>
 <script type="text/javascript" src='<?= base_url() ?>assets/jquery/Chart.min.js'></script>
+<script type="text/javascript" src='<?= base_url() ?>assets/jquery/confGlobalChart.js'></script>
+<script type="text/javascript" src='<?= base_url() ?>assets/jquery/personalizacionChart.js'></script>
 <script>
-
-Chart.defaults.global = {
-    // Boolean - Whether to animate the chart
-    animation: true,
-    // Number - Number of animation steps
-    animationSteps: 60,
-    // String - Animation easing effect
-    // Possible effects are:
-    // [easeInOutQuart, linear, easeOutBounce, easeInBack, easeInOutQuad,
-    //  easeOutQuart, easeOutQuad, easeInOutBounce, easeOutSine, easeInOutCubic,
-    //  easeInExpo, easeInOutBack, easeInCirc, easeInOutElastic, easeOutBack,
-    //  easeInQuad, easeInOutExpo, easeInQuart, easeOutQuint, easeInOutCirc,
-    //  easeInSine, easeOutExpo, easeOutCirc, easeOutCubic, easeInQuint,
-    //  easeInElastic, easeInOutSine, easeInOutQuint, easeInBounce,
-    //  easeOutElastic, easeInCubic]
-    animationEasing: "easeOutQuart",
-    // Boolean - If we should show the scale at all
-    showScale: true,
-    // Boolean - If we want to override with a hard coded scale
-    scaleOverride: false,
-    // ** Required if scaleOverride is true **
-    // Number - The number of steps in a hard coded scale
-    scaleSteps: null,
-    // Number - The value jump in the hard coded scale
-    scaleStepWidth: null,
-    // Number - The scale starting value
-    scaleStartValue: null,
-    // String - Colour of the scale line
-    scaleLineColor: "rgba(0,0,0,.1)",
-    // Number - Pixel width of the scale line
-    scaleLineWidth: 1,
-    // Boolean - Whether to show labels on the scale
-    scaleShowLabels: true,
-    // Interpolated JS string - can access value
-    scaleLabel: "<%=value%>",
-    // Boolean - Whether the scale should stick to integers, not floats even if drawing space is there
-    scaleIntegersOnly: true,
-    // Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
-    scaleBeginAtZero: false,
-    // String - Scale label font declaration for the scale label
-    scaleFontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
-    // Number - Scale label font size in pixels
-    scaleFontSize: 12,
-    // String - Scale label font weight style
-    scaleFontStyle: "normal",
-    // String - Scale label font colour
-    scaleFontColor: "white",
-    // Boolean - whether or not the chart should be responsive and resize when the browser does.
-    responsive: true,
-    // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-    maintainAspectRatio: false,
-    // Boolean - Determines whether to draw tooltips on the canvas or not
-    showTooltips: true,
-    // Function - Determines whether to execute the customTooltips function instead of drawing the built in tooltips (See [Advanced - External Tooltips](#advanced-usage-custom-tooltips))
-    customTooltips: false,
-    // Array - Array of string names to attach tooltip events
-    tooltipEvents: ["mousemove", "touchstart", "touchmove"],
-    // String - Tooltip background colour
-    tooltipFillColor: "rgba(0,0,0,0.8)",
-    // String - Tooltip label font declaration for the scale label
-    tooltipFontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
-    // Number - Tooltip label font size in pixels
-    tooltipFontSize: 14,
-    // String - Tooltip font weight style
-    tooltipFontStyle: "normal",
-    // String - Tooltip label font colour
-    tooltipFontColor: "#fff",
-    // String - Tooltip title font declaration for the scale label
-    tooltipTitleFontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
-    // Number - Tooltip title font size in pixels
-    tooltipTitleFontSize: 14,
-    // String - Tooltip title font weight style
-    tooltipTitleFontStyle: "bold",
-    // String - Tooltip title font colour
-    tooltipTitleFontColor: "#fff",
-    // Number - pixel width of padding around tooltip text
-    tooltipYPadding: 6,
-    // Number - pixel width of padding around tooltip text
-    tooltipXPadding: 6,
-    // Number - Size of the caret on the tooltip
-    tooltipCaretSize: 8,
-    // Number - Pixel radius of the tooltip border
-    tooltipCornerRadius: 6,
-    // Number - Pixel offset from point x to tooltip edge
-    tooltipXOffset: 10,
-    // String - Template string for single tooltips
-    tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>",
-    // String - Template string for multiple tooltips
-    multiTooltipTemplate: "<%= value %>",
-    // Function - Will fire on animation progression.
-    onAnimationProgress: function(){},
-    // Function - Will fire on animation completion.
-    onAnimationComplete: function(){}
-}
-var data = {
-    labels: [],
-    datasets: [
-        {
-            label: "Temperatura",
-            fillColor: "rgba(220,220,220,0.2)",
-            strokeColor: "rgba(220,220,220,1)",
-            pointColor: "rgba(220,220,220,1)",
-            pointStrokeColor: "#fff",
-            pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(220,220,220,1)",
-            data: []
-        },
-    ]
-};
-
-var data2 = {
-    labels: [],
-    datasets: [
-        {
-            label: "Viento",
-            fillColor: "rgba(220,220,220,0.2)",
-            strokeColor: "rgba(220,220,220,1)",
-            pointColor: "rgba(220,220,220,1)",
-            pointStrokeColor: "#fff",
-            pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(220,220,220,1)",
-            data: []
-        },
-    ]
-};
-var data3 = {
-    labels: [],
-    datasets: [
-        {
-            label: "Direccion Viento",
-            fillColor: "rgba(220,220,220,0.2)",
-            strokeColor: "rgba(220,220,220,1)",
-            pointColor: "rgba(220,220,220,1)",
-            pointStrokeColor: "#fff",
-            pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(220,220,220,1)",
-            data: []
-        },
-    ]
-};
-var data4 = {
-    labels: [],
-    datasets: [
-        {
-            label: "Presion",
-            fillColor: "rgba(220,220,220,0.2)",
-            strokeColor: "rgba(220,220,220,1)",
-            pointColor: "rgba(220,220,220,1)",
-            pointStrokeColor: "#fff",
-            pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(220,220,220,1)",
-            data: []
-        },
-    ]
-};
-var ctx = $("#1").get(0).getContext("2d");
-var chart1 = new Chart(ctx).Line(data,{
-  responsive : true,
-  scaleOverride : true,
-  scaleSteps : 10,
-  scaleStepWidth : 4,
-  scaleStartValue : 0
-});
-var ctx1 = $("#2").get(0).getContext("2d");
-var chart2 = new Chart(ctx1).Line(data2,{
-  responsive : true,
-  scaleOverride : true,
-  scaleSteps : 10,
-  scaleStepWidth : 10,
-  scaleStartValue : 0
-});
-var ctx2 = $("#3").get(0).getContext("2d");
-var chart3 = new Chart(ctx2).Line(data3, {
-        responsive : true,
-        scaleOverride : true,
-        scaleSteps : 10,
-        scaleStepWidth : 36,
-        scaleStartValue : 0
-    });
-var ctx3 = $("#4").get(0).getContext("2d");
-var chart4 = new Chart(ctx3).Line(data4,{
-  responsive : true,
-  scaleOverride : true,
-  scaleSteps : 12,
-  scaleStepWidth : 5,
-  scaleStartValue : 980
-});
-
 <?php
-foreach(array_reverse($tempUltimoDia) as $data):
+foreach(array_reverse($ultimas2Horas) as $data):
   $epoch = date("H:i",strtotime($data->data));
   //$time = new DateTime("@$epoch");
 ?>
   chart1.addData([<?php echo $data->temp; ?>],"<?php echo $epoch; ?>");
-<?php
-endforeach;
-foreach(array_reverse($vientoUltimoDia) as $data2):
-  $epoch = date("H:i",strtotime($data2->data));
-  //$time = new DateTime("@$epoch");
-?>
-  chart2.addData([<?php echo $data2->viento; ?>],"<?php echo $epoch; ?>");
-<?php
-endforeach;
-foreach(array_reverse($dirVientoUltimoDia) as $data3):
-  $epoch = date("H:i",strtotime($data3->data));
-  //$time = new DateTime("@$epoch");
-?>
-  chart3.addData([<?php echo $data3->dirViento; ?>],"<?php echo $epoch; ?>");
-<?php
-endforeach;
-foreach(array_reverse($presionUltimoDia) as $data4):
-  $epoch = date("H:i",strtotime($data4->data));
-  //$time = new DateTime("@$epoch");
-?>
-  chart4.addData([<?php echo $data4->presion; ?>],"<?php echo $epoch; ?>");
+  chart2.addData([<?php echo $data->viento; ?>],"<?php echo $epoch; ?>");
+  chart3.addData([<?php echo $data->dirViento; ?>],"<?php echo $epoch; ?>");
+  chart4.addData([<?php echo $data->presion; ?>],"<?php echo $epoch; ?>");
+  chart5.addData([<?php echo $data->humedad; ?>],"<?php echo $epoch; ?>");
+  chart6.addData([<?php echo $data->lluvia; ?>],"<?php echo $epoch; ?>");
 <?php
 endforeach;
 ?>

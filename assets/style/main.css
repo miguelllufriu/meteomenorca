@@ -19,6 +19,16 @@ nav{
   background-color: transparent;
   box-shadow: none;
 }
+.select-wrapper input.select-dropdown{
+  color: white;
+  display: table-row;
+}
+.select-wrapper span.caret{
+  top: 0;
+}
+.side-nav{
+  background-color: turquoise;
+}
 .brand-logo{
   margin-left: 10px;
 }
@@ -48,7 +58,7 @@ nav{
 .generalPred_container{
   font-size: 0.9em;
   background-color: rgba(255, 255, 255, 0.5);
-  height: 100%
+  height: 100%;
 }
 .generalPred_container .col{
   padding: 0px;
@@ -61,13 +71,8 @@ nav{
   padding-left: 10px;
   border-left: 10px solid #00bcd4;
 }
-.notice_body{
-  text-align: justify;
-  height: 80%;
-  white-space: inherit;
-}
 #daily_pred{
-  margin-bottom: 10px;
+  margin-bottom: 35px;
 }
 a{
   color: inherit;
@@ -98,7 +103,7 @@ a{
   border-right: 1px solid gray;
 }
 .weeklyPredContainer{
-  max-height: 70px;
+
 }
 footer.page-footer{
   -webkit-background-color: transparent;
@@ -108,6 +113,11 @@ footer.page-footer{
   margin-top: 0;
 }
 /*Propiedades para tamaño escritorio*/
+@media (min-width: 1600px) {
+  #daily_pred{
+    margin-bottom: 8%;
+  }
+}
 @media (min-width: 600px) {
   .data_container{
     padding: 50px 30px;
@@ -128,14 +138,14 @@ footer.page-footer{
   }
 }
 @media (max-width: 480px){
-  h3{
+  h3,h4{
     font-size: 0.9em;
   }
   .row .col{
-    padding: 5px;
+    padding: 2px;
   }
   aside{
-    margin: 25px;
+    margin: 5px;
   }
   form{
     padding: 15px !important;
@@ -235,7 +245,7 @@ textarea{
 .btn{
   float: right;
   margin-right: 15px;
-  background-color: rgb(58, 33, 143);
+  background-color: turquoise;
 }
 .inputContacto{
   padding: 0px !important;
