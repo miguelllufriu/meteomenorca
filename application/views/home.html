@@ -1,6 +1,8 @@
 <?php
 
 $datos = $datosPrincipales->row_array();
+$datosPredDia = $ultimaPredDiaria->row_array();
+$datosPredSem = $ultimaPredSem->row_array();
 
 $viento = $datos['viento'];
 $temp = $datos['temp'];
@@ -23,99 +25,210 @@ $icono = $datos['icono'];
   <section class="data_container col s4"><h4><?= round($lluvia,3, PHP_ROUND_HALF_UP) ?><span style="font-size:12px">mm</span></h4></section>
 </section>
 <aside class="generalPred_container col s12 m10 l5 push-m1 push-l1 row">
+  <h4 style="padding: 0px; margin: 0px;" class="center-align">PREVISIÓN</h4>
+  <h5>12 HORAS</h5>
   <section id="daily_pred" class="pred_container col s12">
-    <section class="col s1">
-      <p>
-        adsflkasdf
-      </p>
+    <section class="col s6 m3 dailyPredContainer borderRight">
+      <h6><?= date('H:i',$datosPredDia['time03']) ?></h6>
+      <img src="<?= base_url() ?>assets/images/iconosTiempo/<?= $datosPredDia['icono03'] ?>.png"/ alt="icono" class="responsive-img" width="80%">
+      <section class="col s6 dailyPredContainer01">
+      <p><?=round($datosPredDia['temp03'],1,PHP_ROUND_HALF_UP)?><sup>o</sup>C</p>
+      </section>
+      <section class="col s6 dailyPredContainer02">
+        <p><?= $datosPredDia['intPrec03'] ?>mm</p>
+      </section>
     </section>
-    <section class="col s1">
-      <p>
-        adsflkasdf
-      </p>
+    <section class="col s6 m3 dailyPredContainer borderRight">
+      <h6><?= date('H:i',$datosPredDia['time06']) ?></h6>
+      <img src="<?= base_url() ?>assets/images/iconosTiempo/<?= $datosPredDia['icono06'] ?>.png"/ alt="icono" class="responsive-img" width="80%">
+      <section class="col s6 dailyPredContainer01">
+      <p><?=round($datosPredDia['temp06'],1,PHP_ROUND_HALF_UP)?><sup>o</sup>C</p>
+      </section>
+      <section class="col s6 dailyPredContainer02">
+        <p><?= $datosPredDia['intPrec06'] ?>mm</p>
+      </section>
     </section>
-    <section class="col s1">
-      <p>
-        adsflkasdf
-      </p>
+    <section class="col s6 m3 dailyPredContainer borderRight">
+      <h6><?= date('H:i',$datosPredDia['time09']) ?></h6>
+      <img src="<?= base_url() ?>assets/images/iconosTiempo/<?= $datosPredDia['icono09'] ?>.png"/ alt="icono" class="responsive-img" width="80%">
+      <section class="col s6 dailyPredContainer01">
+      <p><?=round($datosPredDia['temp09'],1,PHP_ROUND_HALF_UP)?><sup>o</sup>C</p>
+      </section>
+      <section class="col s6 dailyPredContainer02">
+        <p><?= $datosPredDia['intPrec09'] ?>mm</p>
+      </section>
     </section>
-    <section class="col s1">
-      <p>
-        adsflkasdf
-      </p>
-    </section>
-    <section class="col s1">
-      <p>
-        adsflkasdf
-      </p>
-    </section>
-    <section class="col s1">
-      <p>
-        adsflkasdf
-      </p>
-    </section>
-    <section class="col s1">
-      <p>
-        adsflkasdf
-      </p>
-    </section>
-    <section class="col s1">
-      <p>
-        adsflkasdf
-      </p>
-    </section>
-    <section class="col s1">
-      <p>
-        adsflkasdf
-      </p>
-    </section>
-    <section class="col s1">
-      <p>
-        adsflkasdf
-      </p>
-    </section>
-    <section class="col s1">
-      <p>
-        adsflkasdf
-      </p>
-    </section>
-    <section class="col s1">
-      <p>
-        adsflkasdf
-      </p>
+    <section class="col s6 m3 dailyPredContainer">
+      <h6><?= date('H:i',$datosPredDia['time12']) ?></h6>
+      <img src="<?= base_url() ?>assets/images/iconosTiempo/<?= $datosPredDia['icono12'] ?>.png"/ alt="icono" class="responsive-img" width="80%">
+      <section class="col s6 dailyPredContainer01">
+      <p><?=round($datosPredDia['temp12'],1,PHP_ROUND_HALF_UP)?><sup>o</sup>C</p>
+      </section>
+      <section class="col s6 dailyPredContainer02">
+        <p><?= $datosPredDia['intPrec12'] ?>mm</p>
+      </section>
     </section>
   </section>
+  <h5>7 DÍAS</h5>
   <section class="pred_container col s12">
-    <section class="col s1">
-      <p>
-        adsflkasdf
-      </p>
+    <section class="col s12 m6">
+    <section class="col s12 weeklyPredContainer">
+      <section class="col s1">
+        <?= date('d/m',$datosPredSem['time01']) ?>
+      </section>
+      <section class="col s2">
+      <img src="<?= base_url() ?>assets/images/iconosTiempo/<?= $datosPredSem['icono01'] ?>.png"/ alt="icono" class="responsive-img">
     </section>
-    <section class="col s1">
-      <p>
-        adsflkasdf
-      </p>
+    <section class="col s2">
+      <p style="margin:-5px;margin-left:5px;"><?= round($datosPredSem['minTemp01']) ?>ºC</p>
+      <p style="margin:-5px;margin-left:5px;"><?= round($datosPredSem['maxTemp01']) ?>ºC</p>
     </section>
-    <section class="col s1">
-      <p>
-        adsflkasdf
-      </p>
+    <section class="col s2 push-s1" style="text-align:center;">
+      <p style="margin:0;"><?= $datosPredSem['probPrec01'] ?>%</p>
+      <p style="margin:-5px;"><?= $datosPredSem['intPrec01'] ?>mm</p>
     </section>
-    <section class="col s1">
-      <p>
-        adsflkasdf
-      </p>
+    <section class="col s1 push-s2">
+      <img src="<?= base_url() ?>assets/images/arrow.png" alt="icono" class="responsive-img" width="70%" align="middle" style="max-width:50px;max-height:50px;" id="arrowViento01"/><h6 id=valDirViento01><?= $datosPredSem['dirViento01'] ?></h6>
+      </section>
+      <section class="col s1 push-s2">
+        <p style="margin:0;"><?= $datosPredSem['velViento01'] ?></p><p style="margin:-5px;">km/h</p>
     </section>
-    <section class="col s1">
-      <p>
-        adsflkasdf
-      </p>
     </section>
-    <section class="col s1">
-      <p>
-        adsflkasdf
-      </p>
+    <section class="col s12 weeklyPredContainer">
+      <section class="col s1">
+        <?= date('d/m',$datosPredSem['time02']) ?>
+      </section>
+      <section class="col s2">
+      <img src="<?= base_url() ?>assets/images/iconosTiempo/<?= $datosPredSem['icono02'] ?>.png"/ alt="icono" class="responsive-img">
     </section>
+    <section class="col s2">
+      <p style="margin:-5px;margin-left:5px;"><?= round($datosPredSem['minTemp02']) ?>ºC</p>
+      <p style="margin:-5px;margin-left:5px;"><?= round($datosPredSem['maxTemp02']) ?>ºC</p>
+    </section>
+    <section class="col s2 push-s1" style="text-align:center;">
+      <p style="margin:0;"><?= $datosPredSem['probPrec02'] ?>%</p>
+      <p style="margin:-5px;"><?= $datosPredSem['intPrec02'] ?>mm</p>
+    </section>
+    <section class="col s1 push-s2">
+        <img src="<?= base_url() ?>assets/images/arrow.png" alt="icono" class="responsive-img" width="70%" style="max-width:50px;max-height:50px;" id="arrowViento02"/><h6 id=valDirViento02><?= $datosPredSem['dirViento02'] ?></h6>
+      </section>
+      <section class="col s1 push-s2">
+      <p style="margin:0;"><?= $datosPredSem['velViento02'] ?></p><p style="margin:-5px;">km/h</p>
+    </section>
+    </section>
+    <section class="col s12 weeklyPredContainer">
+      <section class="col s1">
+        <?= date('d/m',$datosPredSem['time03']) ?>
+      </section>
+      <section class="col s2">
+      <img src="<?= base_url() ?>assets/images/iconosTiempo/<?= $datosPredSem['icono03'] ?>.png"/ alt="icono" class="responsive-img">
+    </section>
+    <section class="col s2">
+      <p style="margin:-5px;margin-left:5px;"><?= round($datosPredSem['minTemp03']) ?>ºC</p>
+      <p style="margin:-5px;margin-left:5px;"><?= round($datosPredSem['maxTemp03']) ?>ºC</p>
+    </section>
+    <section class="col s2 push-s1" style="text-align:center;">
+      <p style="margin:0;"><?= $datosPredSem['probPrec03'] ?>%</p>
+      <p style="margin:-5px;"><?= $datosPredSem['intPrec03'] ?>mm</p>
+    </section>
+    <section class="col s1 push-s2">
+        <img src="<?= base_url() ?>assets/images/arrow.png" alt="icono" class="responsive-img" width="70%" style="max-width:50px;max-height:50px;" id="arrowViento03"/><h6 id=valDirViento03><?= $datosPredSem['dirViento03'] ?></h6>
+      </section>
+      <section class="col s1 push-s2">
+      <p style="margin:0;"><?= $datosPredSem['velViento03'] ?></p><p style="margin:-5px;">km/h</p>
+    </section>
+    </section>
+    <section class="col s12 weeklyPredContainer">
+      <section class="col s1">
+        <?= date('d/m',$datosPredSem['time04']) ?>
+      </section>
+      <section class="col s2">
+      <img src="<?= base_url() ?>assets/images/iconosTiempo/<?= $datosPredSem['icono04'] ?>.png"/ alt="icono" class="responsive-img">
+    </section>
+    <section class="col s2">
+      <p style="margin:-5px;margin-left:5px;"><?= round($datosPredSem['minTemp04']) ?>ºC</p>
+      <p style="margin:-5px;margin-left:5px;"><?= round($datosPredSem['maxTemp04']) ?>ºC</p>
+    </section>
+    <section class="col s2 push-s1" style="text-align:center;">
+      <p style="margin:0;"><?= $datosPredSem['probPrec04'] ?>%</p>
+      <p style="margin:-5px;"><?= $datosPredSem['intPrec04'] ?>mm</p>
+    </section>
+    <section class="col s1 push-s2">
+        <img src="<?= base_url() ?>assets/images/arrow.png" alt="icono" class="responsive-img" width="70%" style="max-width:50px;max-height:50px;" id="arrowViento04"/><h6 id=valDirViento04><?= $datosPredSem['dirViento04'] ?></h6>
+      </section>
+      <section class="col s1 push-s2">
+      <p style="margin:0;"><?= $datosPredSem['velViento04'] ?></p><p style="margin:-5px;">km/h</p>
+    </section>
+    </section>
+  </section>
+  <section class="col s12 m6">
+    <section class="col s12 weeklyPredContainer">
+      <section class="col s1">
+        <?= date('d/m',$datosPredSem['time05']) ?>
+      </section>
+      <section class="col s2">
+      <img src="<?= base_url() ?>assets/images/iconosTiempo/<?= $datosPredSem['icono05'] ?>.png"/ alt="icono" class="responsive-img">
+    </section>
+    <section class="col s2">
+      <p style="margin:-5px;margin-left:5px;"><?= round($datosPredSem['minTemp05']) ?>ºC</p>
+      <p style="margin:-5px;margin-left:5px;"><?= round($datosPredSem['maxTemp05']) ?>ºC</p>
+    </section>
+    <section class="col s2 push-s1" style="text-align:center;">
+      <p style="margin:0;"><?= $datosPredSem['probPrec05'] ?>%</p>
+      <p style="margin:-5px;"><?= $datosPredSem['intPrec05'] ?>mm</p>
+    </section>
+    <section class="col s1 push-s2">
+        <img src="<?= base_url() ?>assets/images/arrow.png" alt="icono" class="responsive-img" width="70%" style="max-width:50px;max-height:50px;" id="arrowViento05"/><h6 id=valDirViento05><?= $datosPredSem['dirViento05'] ?></h6>
+      </section>
+      <section class="col s1 push-s2">
+      <p style="margin:0;"><?= $datosPredSem['velViento05'] ?></p><p style="margin:-5px;">km/h</p>
+    </section>
+    </section>
+    <section class="col s12 weeklyPredContainer">
+      <section class="col s1">
+        <?= date('d/m',$datosPredSem['time06']) ?>
+      </section>
+      <section class="col s2">
+      <img src="<?= base_url() ?>assets/images/iconosTiempo/<?= $datosPredSem['icono06'] ?>.png"/ alt="icono" class="responsive-img">
+    </section>
+    <section class="col s2">
+      <p style="margin:-5px;margin-left:5px;"><?= round($datosPredSem['minTemp06']) ?>ºC</p>
+      <p style="margin:-5px;margin-left:5px;"><?= round($datosPredSem['maxTemp06']) ?>ºC</p>
+    </section>
+    <section class="col s2 push-s1" style="text-align:center;">
+      <p style="margin:0;"><?= $datosPredSem['probPrec06'] ?>%</p>
+      <p style="margin:-5px;"><?= $datosPredSem['intPrec06'] ?>mm</p>
+    </section>
+    <section class="col s1 push-s2">
+        <img src="<?= base_url() ?>assets/images/arrow.png" alt="icono" class="responsive-img" width="70%" style="max-width:50px;max-height:50px;" id="arrowViento06"/><h6 id=valDirViento06><?= $datosPredSem['dirViento06'] ?></h6>
+      </section>
+      <section class="col s1 push-s2">
+      <p style="margin:0;"><?= $datosPredSem['velViento06'] ?></p><p style="margin:-5px;">km/h</p>
+    </section>
+    </section>
+    <section class="col s12 weeklyPredContainer">
+      <section class="col s1">
+        <?= date('d/m',$datosPredSem['time07']) ?>
+      </section>
+      <section class="col s2">
+      <img src="<?= base_url() ?>assets/images/iconosTiempo/<?= $datosPredSem['icono07'] ?>.png"/ alt="icono" class="responsive-img">
+    </section>
+    <section class="col s2">
+      <p style="margin:-5px;margin-left:5px;"><?= round($datosPredSem['minTemp07']) ?>ºC</p>
+      <p style="margin:-5px;margin-left:5px;"><?= round($datosPredSem['maxTemp07']) ?>ºC</p>
+    </section>
+    <section class="col s2 push-s1" style="text-align:center;">
+      <p style="margin:0;"><?= $datosPredSem['probPrec07'] ?>%</p>
+      <p style="margin:-5px;"><?= $datosPredSem['intPrec07'] ?>mm</p>
+    </section>
+    <section class="col s1 push-s2">
+        <img src="<?= base_url() ?>assets/images/arrow.png" alt="icono" class="responsive-img" width="70%" style="max-width:50px;max-height:50px;" id="arrowViento07"/><h6 id=valDirViento07><?= $datosPredSem['dirViento07'] ?></h6>
+      </section>
+      <section class="col s1 push-s2">
+      <p style="margin:0;"><?= $datosPredSem['velViento07'] ?></p><p style="margin:-5px;">km/h</p>
+    </section>
+    </section>
+  </section>
   </section>
 </aside>
 </section>

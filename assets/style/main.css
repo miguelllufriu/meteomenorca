@@ -52,7 +52,7 @@ nav{
 }
 .generalPred_container .col{
   padding: 0px;
-  overflow: hidden;
+  min-height: 0;
 }
 .pred_container{
   margin: 0;
@@ -71,6 +71,34 @@ nav{
 }
 a{
   color: inherit;
+}
+.dailyPredContainer{
+  text-align: center;
+  padding: 10px !important;
+}
+.dailyPredContainer h6{
+  text-align: left;
+}
+.generalPred_container h5{
+  padding: 10px;
+}
+.dailyPredContainer01{
+  text-align: left;
+}
+.dailyPredContainer02{
+  text-align: right;
+}
+.dailyPredContainer02 p{
+  padding-right: 10px;
+}
+.dailyPredContainer p{
+  margin: 0;
+}
+.borderRight{
+  border-right: 1px solid gray;
+}
+.weeklyPredContainer{
+  max-height: 70px;
 }
 footer.page-footer{
   -webkit-background-color: transparent;
@@ -94,12 +122,14 @@ footer.page-footer{
     margin-top: 1.5%;
   }
 }
-@media (max-width: 480px){
-  h3,h4{
-    font-size: 0.9em;
+@media (max-width: 600px){
+  .borderRight{
+    border-right: 0px;
   }
-  .pred_container{
-    height: 200px;
+}
+@media (max-width: 480px){
+  h3{
+    font-size: 0.9em;
   }
   .row .col{
     padding: 5px;
@@ -109,6 +139,12 @@ footer.page-footer{
   }
   form{
     padding: 15px !important;
+  }
+  .dailyPredContainer .col{
+    padding: 0;
+  }
+  .dailyPredContainer{
+    padding: 0px;
   }
 
 }
