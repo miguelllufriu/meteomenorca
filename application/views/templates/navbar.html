@@ -5,11 +5,9 @@
       <ul class="right hide-on-med-and-down">
         <li>
         <section class="input-field col s6">
-          <select>
-          <option value="CIU001" selected>Ciutadella</option>
-          <option value="CIU001" selected>Ciutadella</option>
-          <option value="CIU001" selected>Ciutadella</option>
-          <option value="CIU001" selected>Ciutadella</option>
+          <select id="locationSelect" onchange="setLocation(this.value);location.reload()">
+          <option value="CIU001">Ciutadella, Menorca</option>
+          <option value="MAH001">Maó, Menorca</option>
           </select>
         </section>
       </li>
@@ -25,11 +23,9 @@
         <li><a href="<?= base_url() ?>Contacto">Contacto</a></li>
         <li>
         <section class="input-field col s6">
-          <select>
-          <option value="CIU001" selected>Ciutadella</option>
-          <option value="CIU001" selected>Ciutadella</option>
-          <option value="CIU001" selected>Ciutadella</option>
-          <option value="CIU001" selected>Ciutadella</option>
+          <select id="locationSelect" onchange="setLocation(this.value);location.reload()">
+          <option value="CIU001">Ciutadella, Menorca</option>
+          <option value="MAH001">Maó, Menorca</option>
           </select>
         </section>
       </li>

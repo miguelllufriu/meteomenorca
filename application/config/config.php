@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 //$config['base_url'] = 'http://meteomenorca.es/meteomenorca';//Para producción en servidor web def.
-$config['base_url'] = 'http://192.168.0.155:8080/meteomenorca';//Para desarrollo en local
+$config['base_url'] = 'http://192.168.0.156:8080/meteomenorca';//Para desarrollo en local
 /*
 |--------------------------------------------------------------------------
 | Index File

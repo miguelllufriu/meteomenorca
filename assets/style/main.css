@@ -250,3 +250,35 @@ textarea{
 .inputContacto{
   padding: 0px !important;
 }
+/**************************SECCIÓN NOTICIAS******************************************/
+.noticesWrapper{
+  max-width: 780px;
+  margin-top: 15px;
+}
+.noticesWrapper .notice{
+  padding: 15px;
+  height: 400px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.5);
+}
+.noticesWrapper .notice:hover{
+  background: rgba(255, 255, 255, 0.8);
+}
+.noticesWrapper .notice .imageWrapper{
+  max-height: 70%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden
+}
+.noticesWrapper .notice .noticeTitle{
+
+}
+.noticesWrapper .notice .noticeTitle h4{
+  font-size: 2em !important;
+  max-height: 70px;
+  padding: 0;
+  margin: 0;
+}
+.noticesWrapper .notice .resumeBody{
+
+}

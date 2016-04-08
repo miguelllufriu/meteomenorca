@@ -7,13 +7,15 @@ class Noticias extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->library('user_agent');
+		$this->load->model('noticias_model');
 	}
 
 	public function index()
 	{
+		$datos['ultimasNoticias'] = $this->noticias_model->getUltimasNoticias();
 		$this->load->view('templates/header.html');
 		$this->load->view('templates/navbar.html');
-		$this->load->view('noticias.html');
+		$this->load->view('noticias.html',$datos);
 		$this->load->view('templates/footer.html');
 	}
 }

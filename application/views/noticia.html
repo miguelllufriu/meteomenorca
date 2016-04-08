@@ -1,0 +1,15 @@
+<?php
+  if (is_array($noticia)){
+  $id = $noticia[0]->id;
+  $date = $noticia[0]->date;
+  $author = $noticia[0]->author;
+  $title = $noticia[0]->title;
+  $body = $noticia[0]->body;
+}
+?>
+<section class="noticesWrapper row">
+<?= $id, $date, $title, $author, $body, server_root()?>
+</section>
+
+
+</section>

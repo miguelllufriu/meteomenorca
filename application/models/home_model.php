@@ -10,10 +10,15 @@ class Home_model extends CI_Model {
 
 	public function getUltimoRegistro()
 	{
-    $query = $this->db->query("select * from currently_data as cd, currently_api as ca order by cd.data desc, ca.data desc limit 1");
+    if (!isset($_COOKIE['location'])){
+      $location = "CIU001";
+    }else{
+      $location = get_cookie("location");
+    }
+    $query = $this->db->query("select * from currently_data as cd, currently_api as ca where cd.sid = '$location' and ca.sid = '$location' order by cd.data desc, ca.data desc limit 1");
     if ($query->num_rows() > 0)
     {
-    return $query;
+      return $query;
     }
     else
     {
@@ -22,10 +27,15 @@ class Home_model extends CI_Model {
 	}
   public function getUltimoDailyPred()
   {
-    $query = $this->db->query("select * from daily_pred as dp order by dp.data desc limit 1");
+    if (!isset($_COOKIE['location'])){
+      $location = "CIU001";
+    }else{
+      $location = get_cookie("location");
+    }
+    $query = $this->db->query("select * from daily_pred as dp where dp.sid = '$location' order by dp.data desc limit 1");
     if ($query->num_rows() > 0)
     {
-    return $query;
+      return $query;
     }
     else
     {
@@ -34,7 +44,12 @@ class Home_model extends CI_Model {
   }
   public function getUltimoWeeklyPred()
   {
-    $query = $this->db->query("select * from weekly_pred as dp order by dp.data desc limit 1");
+    if (!isset($_COOKIE['location'])){
+      $location = "CIU001";
+    }else{
+      $location = get_cookie("location");
+    }
+    $query = $this->db->query("select * from weekly_pred as dp where dp.sid = '$location' order by dp.data desc limit 1");
     if ($query->num_rows() > 0)
     {
     return $query;

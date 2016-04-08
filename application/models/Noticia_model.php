@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Noticias_model extends CI_Model {
+class Noticia_model extends CI_Model {
 
   function __construct()
   {
@@ -8,9 +8,9 @@ class Noticias_model extends CI_Model {
     $this->load->database();
   }
 
-  public function getUltimasNoticias()
+  public function getNoticia($idNotice)
 	{
-    $query = $this->db->query("select * from notices order by date desc limit 10");
+    $query = $this->db->query("select * from notices where id = $idNotice");
     if ($query->num_rows() > 0)
     {
       return $query->result();

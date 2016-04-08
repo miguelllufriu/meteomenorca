@@ -1,0 +1,26 @@
+<section class="noticesWrapper row">
+<?php
+foreach($ultimasNoticias as $data):
+$id = $data->id;
+$date = $data->date;
+$author = $data->author;
+$title = $data->title;
+$body = $data->body;
+?>
+<a href="http://192.168.0.156:8080/meteomenorca/Noticia/index/<?= $id ?>">
+<section class="notice col s12 m6">
+  <section class="imageWrapper">
+    <img src="<?= base_url() ?>assets/images/dia.jpg" alt="imagen-noticia" class="responsive-img" />
+  </section>
+  <section class="noticeTitle">
+    <h4><?= $title ?></h4>
+  </section>
+  <section class="resumeBody">
+    <p><?= substr($body, 0, 200)?>...</p>
+  </section>
+</section>
+</a>
+<?php
+endforeach;
+?>
+</section>
