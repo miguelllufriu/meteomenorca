@@ -8,14 +8,9 @@ class Home_model extends CI_Model {
     $this->load->database();
   }
 
-	public function getUltimoRegistro()
+	public function getUltimoRegistro($location)
 	{
-    if (!isset($_COOKIE['location'])){
-      $location = "CIU001";
-    }else{
-      $location = get_cookie("location");
-    }
-    $query = $this->db->query("select * from currently_data as cd, currently_api as ca where cd.sid = '$location' and ca.sid = '$location' order by cd.data desc, ca.data desc limit 1");
+    $query = $this->db->query("select * from (select * from currently_data where currently_data.sid = '$location' order by id limit 1) _cd join (select * from currently_api where currently_api.sid = '$location' order by id limit 1) _ca on _cd.sid = _ca.sid order by _ca.id, _cd.id desc limit 1 ");
     if ($query->num_rows() > 0)
     {
       return $query;
@@ -25,14 +20,9 @@ class Home_model extends CI_Model {
       return false;
     }
 	}
-  public function getUltimoDailyPred()
+  public function getUltimoDailyPred($location)
   {
-    if (!isset($_COOKIE['location'])){
-      $location = "CIU001";
-    }else{
-      $location = get_cookie("location");
-    }
-    $query = $this->db->query("select * from daily_pred as dp where dp.sid = '$location' order by dp.data desc limit 1");
+    $query = $this->db->query("select * from daily_pred as dp where dp.sid = '$location' order by dp.id desc limit 1");
     if ($query->num_rows() > 0)
     {
       return $query;
@@ -42,14 +32,9 @@ class Home_model extends CI_Model {
       return false;
     }
   }
-  public function getUltimoWeeklyPred()
+  public function getUltimoWeeklyPred($location)
   {
-    if (!isset($_COOKIE['location'])){
-      $location = "CIU001";
-    }else{
-      $location = get_cookie("location");
-    }
-    $query = $this->db->query("select * from weekly_pred as dp where dp.sid = '$location' order by dp.data desc limit 1");
+    $query = $this->db->query("select * from weekly_pred as dp where dp.sid = '$location' order by dp.id desc limit 1");
     if ($query->num_rows() > 0)
     {
     return $query;

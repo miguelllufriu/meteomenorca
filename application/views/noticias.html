@@ -1,28 +1,32 @@
 <section class="noticesWrapper row">
 <?php
-foreach($ultimasNoticias as $data):
-$id = $data->id;
-$date = $data->date;
-$author = $data->author;
-$title = $data->title;
-$body = $data->body;
-$tituloImagen = $data->imageTitle;
-$imagen = $data->imagePath;
-?>
-<a href="<?= base_url(); ?>Noticia/index/<?= $id ?>">
-<section class="notice col s12 m6">
-  <section class="imageWrapper">
-    <img src="<?= base_url() ?>uploads/<?= $imagen; ?>" alt="<?= $tituloImagen; ?>" class="responsive-img" />
-  </section>
-  <section class="noticeTitle">
-    <h4><?= $title ?></h4>
-  </section>
-  <section class="resumeBody">
-    <p><?= substr($body, 0, 200)?>...</p>
-  </section>
-</section>
-</a>
-<?php
-endforeach;
+if ($ultimasNoticias == 0){
+  echo "No hay noticias que mostrar.";
+}else{
+    foreach($ultimasNoticias as $data):
+    $id = $data->id;
+    $date = $data->date;
+    $author = $data->author;
+    $title = $data->title;
+    $body = $data->body;
+    $tituloImagen = $data->imageTitle;
+    $imagen = $data->imagePath;
+    ?>
+    <a href="<?= base_url(); ?>Noticia/index/<?= $id ?>">
+    <section class="notice col s12 m6">
+      <section class="imageWrapper">
+        <img src="<?= base_url() ?>uploads/<?= $imagen; ?>" alt="<?= $tituloImagen; ?>" class="responsive-img" />
+      </section>
+      <section class="noticeTitle">
+        <h4><?= $title ?></h4>
+      </section>
+      <section class="resumeBody">
+        <p><?= substr($body, 0, 200)?>...</p>
+      </section>
+    </section>
+    </a>
+    <?php
+    endforeach;
+  }
 ?>
 </section>

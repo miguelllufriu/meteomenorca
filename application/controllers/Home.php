@@ -12,9 +12,14 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$datos['datosPrincipales'] = $this->home_model->getUltimoRegistro();
-		$datos['ultimaPredDiaria'] = $this->home_model->getUltimoDailyPred();
-		$datos['ultimaPredSem'] = $this->home_model->getUltimoWeeklyPred();
+		if (!isset($_COOKIE['location'])){
+			$location = "CIU001";
+		}else{
+			$location = get_cookie("location");
+		}
+		$datos['datosPrincipales'] = $this->home_model->getUltimoRegistro($location);
+		$datos['ultimaPredDiaria'] = $this->home_model->getUltimoDailyPred($location);
+		$datos['ultimaPredSem'] = $this->home_model->getUltimoWeeklyPred($location);
 		$this->load->view('templates/header.html');
 		$this->load->view('templates/navbar.html');
 		$this->load->view('home.html',$datos);

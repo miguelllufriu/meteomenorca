@@ -49,15 +49,16 @@
 <script type="text/javascript" src='<?= base_url() ?>assets/jquery/personalizacionChart.js'></script>
 <script>
   <?php
-  foreach(array_reverse($datos) as $data):
-    $epoch = date("H:i",strtotime($data->data));
+  foreach(array_reverse($datosHistoricos) as $data):
+    $epoch = date("H:i",strtotime($data->time));
+    //$time = new DateTime("@$epoch");
   ?>
-    chart1.addData([<?php echo $data->temp; ?>],"<?php echo $epoch; ?>");
-    chart2.addData([<?php echo $data->viento; ?>],"<?php echo $epoch; ?>");
-    chart3.addData([<?php echo $data->dirViento; ?>],"<?php echo $epoch; ?>");
-    chart4.addData([<?php echo $data->presion; ?>],"<?php echo $epoch; ?>");
-    chart5.addData([<?php echo $data->humedad; ?>],"<?php echo $epoch; ?>");
-    chart6.addData([<?php echo $data->lluvia; ?>],"<?php echo $epoch; ?>");
+    chart1.addData([<?php echo $data->avgTemp; ?>],"<?php echo $epoch; ?>");
+    chart2.addData([<?php echo $data->avgViento; ?>],"<?php echo $epoch; ?>");
+    chart3.addData([<?php echo $data->avgDirViento; ?>],"<?php echo $epoch; ?>");
+    chart4.addData([<?php echo $data->avgPres; ?>],"<?php echo $epoch; ?>");
+    chart5.addData([<?php echo $data->avgHumedad; ?>],"<?php echo $epoch; ?>");
+    chart6.addData([<?php echo $data->totalLluvia; ?>],"<?php echo $epoch; ?>");
   <?php
   endforeach;
   ?>

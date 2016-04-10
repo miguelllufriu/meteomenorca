@@ -159,7 +159,7 @@ footer.page-footer{
   }
 
 }
-/*---------------------------------------------------*/
+/**************************SECCIÓN GRAFICAS******************************************/
 .grafica_container{
   height: 100%;
   width: 95%;
@@ -170,6 +170,23 @@ footer.page-footer{
 }
 canvas{
   max-height: 250px;
+}
+.rangeTimeContainer{
+  margin:0;
+  margin-top: -50px;
+  padding: 0;
+}
+.rangeTimeContainer .select-wrapper .caret{
+  top:16px;
+}
+.rangeTimeContainer h6{
+  font-weight: 900;
+}
+@media (max-width: 480px){
+  .rangeTimeContainer{
+    margin:0;
+    padding: 0;
+  }
 }
 /*******************************************************/
 .input_data{
@@ -251,6 +268,7 @@ textarea{
 .inputContacto{
   padding: 0px !important;
 }
+
 /**************************SECCIÓN NOTICIAS******************************************/
 .noticesWrapper{
   max-width: 780px;
@@ -299,7 +317,7 @@ textarea{
   margin: 0;
   padding: 0;
 }
-/**********************************Meteoadmin************************************/
+/**********************************Admin************************************/
 #newNoticeForm{
   background: rgba(255, 255, 255, 1);
   max-width: 750px;
