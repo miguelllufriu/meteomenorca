@@ -4,7 +4,7 @@ $( document ).ready(function(){
    $(".button-collapse").sideNav();
    $('select').material_select();
    /*Imagen de fondo según hora del día*/
-   $('html').css('background', 'url(assets/images/'+ponerFondoSegunHora()+'.jpg) no-repeat center center fixed');
+   //$('html').css('background', 'url(assets/images/'+ponerFondoSegunHora()+'.jpg) no-repeat center center fixed');
 
    $.backstretch("assets/images/dia.jpg",{speed: 150});
    /*Según los grados del viento, la "arrow" señalará hacia la correspondiente dirección*/

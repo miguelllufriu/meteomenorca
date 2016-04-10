@@ -1,0 +1,19 @@
+<?=@$error?>
+<section id="newNoticeForm">
+<span><?php echo validation_errors(); ?></span>
+  <?=form_open_multipart("upload/do_upload")?>
+  <label>Autor:</label>
+    <input type="text" name="author" />
+  <label>Título:</label>
+    <input type="text" name="title" />
+  <label for="contenido">Cuerpo de la noticia:</label>
+    <textarea class="materialize-textarea" id="contenido" name="contenido"></textarea>
+  <label>Título de la imagen:</label>
+    <input type="text" name="imageTitle" />
+  <label>Imagen:</label>
+    <input type="file" name="userfile" />
+  <button class="btn waves-effect waves-light" type="submit" value="Nueva noticia">Nueva noticia
+    <i class="material-icons right">send</i>
+  </button>
+  <?=form_close()?>
+</section>

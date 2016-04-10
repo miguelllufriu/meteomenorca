@@ -6,11 +6,13 @@ $date = $data->date;
 $author = $data->author;
 $title = $data->title;
 $body = $data->body;
+$tituloImagen = $data->imageTitle;
+$imagen = $data->imagePath;
 ?>
-<a href="http://192.168.0.156:8080/meteomenorca/Noticia/index/<?= $id ?>">
+<a href="<?= base_url(); ?>Noticia/index/<?= $id ?>">
 <section class="notice col s12 m6">
   <section class="imageWrapper">
-    <img src="<?= base_url() ?>assets/images/dia.jpg" alt="imagen-noticia" class="responsive-img" />
+    <img src="<?= base_url() ?>uploads/<?= $imagen; ?>" alt="<?= $tituloImagen; ?>" class="responsive-img" />
   </section>
   <section class="noticeTitle">
     <h4><?= $title ?></h4>

@@ -3,7 +3,8 @@ html,body,.main_container,.data_container,.pred_container,.generalPred_container
   padding: 0;
 }
 html{
-  background: darkgray;
+  background-color: darkgray;
+  background-image: url("/meteomenorca/assets/images/dia.jpg");
   min-height: 100%;
 }
 body{
@@ -281,4 +282,27 @@ textarea{
 }
 .noticesWrapper .notice .resumeBody{
 
+}
+/*******************************NOTICIA*********************************************/
+.noticeContainer{
+  background: rgba(255, 255, 255, 0.5);
+  padding: 15px;
+}
+.noticeContainer .imageNoticeWrapper{
+  max-height: 400px;
+  overflow: hidden;
+}
+.noticeContainer .titleNoticeContainer h4{
+  font-size: 3em !important;
+}
+.noticeContainer .authorDateNoticeContainer{
+  margin: 0;
+  padding: 0;
+}
+/**********************************Meteoadmin************************************/
+#newNoticeForm{
+  background: rgba(255, 255, 255, 1);
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 25px;
 }

@@ -3,13 +3,30 @@
   $id = $noticia[0]->id;
   $date = $noticia[0]->date;
   $author = $noticia[0]->author;
+  $tituloImagen = $noticia[0]->imageTitle;
+  $imagen = $noticia[0]->imagePath;
   $title = $noticia[0]->title;
   $body = $noticia[0]->body;
 }
 ?>
 <section class="noticesWrapper row">
-<?= $id, $date, $title, $author, $body, server_root()?>
-</section>
-
-
+  <section class="noticeContainer">
+    <section class="imageNoticeWrapper">
+      <img src="<?= base_url() ?>uploads/<?= $imagen; ?>" alt="<?= $tituloImagen; ?>" class="responsive-img"/>
+    </section>
+    <section class="titleNoticeContainer">
+      <h4><?= $title ?></h4>
+    </section>
+    <section class="authorDateNoticeWrapper">
+        <p>
+          <span style="font-weight: 900;"><?= $author ?></span>,
+          <?= date_format(date_create($date), 'd/m/Y') ?>
+        </p>
+    </section>
+    <section class="bodyNoticeWrapper">
+      <p>
+        <?= $body ?>
+      </p>
+    </section>
+  </section>
 </section>
