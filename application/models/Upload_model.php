@@ -6,6 +6,7 @@ class Upload_model extends CI_Model {
 
     public function construct() {
         parent::__construct();
+        
     }
 
     //FUNCIÓN PARA INSERTAR LOS DATOS DE LA IMAGEN SUBIDA
