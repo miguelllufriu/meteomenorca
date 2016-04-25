@@ -41,8 +41,8 @@ class Contacto extends CI_Controller {
 					$config['protocol'] = 'smtp';
 					$config['smtp_host'] = 'smtp.1and1.es';
 					$config['smtp_port'] = '587';
-					$config['smtp_user'] = 'contacto@meteomenorca.es';
-					$config['smtp_pass'] = 'mig07ues';
+					$config['smtp_user'] = '';
+					$config['smtp_pass'] = '';
 					$config['mailtype'] = 'html';
 					$config['charset'] = 'iso-8859-1';
 					$config['wordwrap'] = TRUE;
