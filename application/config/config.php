@@ -23,8 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-//$config['base_url'] = 'http://meteomenorca.es/meteomenorca';//Para producción en servidor web def.
-$config['base_url'] = 'http://192.168.0.156:8080/meteomenorca';//Para desarrollo en local
+//$config['base_url'] = 'https://www.meteomenorca.es/';//Para producción en servidor web def.
+$config['base_url'] = 'http://localhost:8080/meteomenorca/';//Para desarrollo en local
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -213,7 +213,7 @@ $config['directory_trigger'] = 'd';
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 0;
+$config['log_threshold'] = 4;
 
 /*
 |--------------------------------------------------------------------------

@@ -35,14 +35,14 @@ class Datos extends CI_Controller {
 					$datos['datosHistoricos'] = $this->datos_model->get12UltimasHoras($location);
 					$this->load->view('templates/header.html');
 					$this->load->view('templates/navbar.html');
-					$this->load->view('datosHistoricos.html',$datos);
+					$this->load->view('datosHistoricosDia.html',$datos);
 					$this->load->view('templates/footerCharts.html');
 					break;
 			case '1dia':
 					$datos['datosHistoricos'] = $this->datos_model->get1Dia($location);
 					$this->load->view('templates/header.html');
 					$this->load->view('templates/navbar.html');
-					$this->load->view('datosHistoricos.html',$datos);
+					$this->load->view('datosHistoricosDia.html',$datos);
 					$this->load->view('templates/footerCharts.html');
 			break;
 			case '1semana':

@@ -11,13 +11,10 @@
 	#Bloqueamos la visualización de archivos y directorios
 	Options -Indexes
 	#Ignoramos archivos y directorios
-	RewriteRule ^(.*)$ /index.php/$1 [L]
-	#Redireccionamos
+	RewriteCond $1 !^(index\.php|assets|uploads|robots\.txt|favicon\.ico)
+	#Redireccionamos a www.
 	RewriteCond %{HTTP_HOST} ^meteomenorca.es [NC]
 	RewriteRule (.*) http://www.meteomenorca.es/$1 [R=301,L,QSA]
-	#Obligamos a navegación segura
-	RewriteCond %{HTTPS} off
-  RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
 </IfModule>
 <IfModule !mod_rewrite.c>
 	ErrorDocument 404 /index.php

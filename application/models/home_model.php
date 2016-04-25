@@ -10,7 +10,7 @@ class Home_model extends CI_Model {
 
 	public function getUltimoRegistro($location)
 	{
-    $query = $this->db->query("select * from (select * from currently_data where currently_data.sid = '$location' order by id limit 1) _cd join (select * from currently_api where currently_api.sid = '$location' order by id limit 1) _ca on _cd.sid = _ca.sid order by _ca.id, _cd.id desc limit 1 ");
+    $query = $this->db->query("select * from (select * from currently_data where currently_data.sid = '$location' order by id desc limit 1) _cd join (select * from currently_api where currently_api.sid = '$location' order by id desc limit 1) _ca on _cd.sid = _ca.sid order by _ca.id, _cd.id desc limit 1 ");
     if ($query->num_rows() > 0)
     {
       return $query;

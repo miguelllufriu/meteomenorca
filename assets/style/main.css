@@ -4,7 +4,7 @@ html,body,.main_container,.data_container,.pred_container,.generalPred_container
 }
 html{
   background-color: darkgray;
-  background-image: url("/meteomenorca/assets/images/dia.jpg");
+  background-image: url("/assets/images/dia.jpg");
   min-height: 100%;
 }
 body{
@@ -159,6 +159,12 @@ footer.page-footer{
   }
 
 }
+@media (max-width: 975px){
+  footer.page-footer .footer-copyright{
+      height: auto;
+      text-align: center;
+  }
+}
 /**************************SECCIÓN GRAFICAS******************************************/
 .grafica_container{
   height: 100%;
@@ -276,7 +282,7 @@ textarea{
 }
 .noticesWrapper .notice{
   padding: 15px;
-  height: 400px;
+  /*height: 400px;*/
   overflow: hidden;
   background: rgba(255, 255, 255, 0.5);
 }

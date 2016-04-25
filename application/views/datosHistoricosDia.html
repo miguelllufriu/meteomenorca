@@ -50,7 +50,7 @@
 <script>
   <?php
   foreach(array_reverse($datosHistoricos) as $data):
-    $epoch = date("d/m H",strtotime($data->time));
+    $epoch = date("H:i",strtotime($data->time));
     //$time = new DateTime("@$epoch");
   ?>
     chart1.addData([<?php echo $data->avgTemp; ?>],"<?php echo $epoch; ?>");

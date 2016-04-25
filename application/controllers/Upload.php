@@ -6,21 +6,24 @@ class Upload extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        		$this->load->model('meteoadmin_model');
+            $this->load->model('meteoadmin_model');
             $this->load->library('form_validation');
             $this->load->helper('form');
-            $this->load->library(array('ion_auth','form_validation'));
+            $this->load->library('ion_auth');
     }
 
     function index() {
       if (!$this->ion_auth->logged_in())
       {
-        redirect('auth/login', 'refresh');
+	echo "Redireccionando...";
+        header('Location: auth/login');
       }
       elseif (!$this->ion_auth->is_admin())
       {
         return show_error('You must be an administrator to view this page.');
+	echo "ERROR";
       }else{
+	echo "Default";
         $this->load->view('templates/header.html');
         $this->load->view('templates/navbar.html');
         $this->load->view('meteoadmin.html');
@@ -42,7 +45,7 @@ class Upload extends CI_Controller {
             $this->load->library('form_validation');
             $this->form_validation->set_rules('author', 'Autor', 'required|min_length[3]|max_length[255]|trim');
             $this->form_validation->set_rules('title', 'Titulo', 'required|min_length[3]|max_length[255]|trim');
-            $this->form_validation->set_rules('contenido', 'Cuerpo', 'required|min_length[3]|max_length[255]|trim');
+            $this->form_validation->set_rules('contenido', 'Cuerpo', 'required|min_length[3]|max_length[3000]|trim');
             $this->form_validation->set_rules('imageTitle', 'TituloImagen', 'required|min_length[3]|max_length[255]|trim');
             $this->form_validation->set_message('required', 'El campo no puede ir vacío!');
             $this->form_validation->set_message('min_length', 'El campo debe tener al menos %s carácteres');
@@ -52,9 +55,9 @@ class Upload extends CI_Controller {
             {
             $config['upload_path'] = './uploads/';
             $config['allowed_types'] = 'gif|jpg|png';
-            $config['max_size'] = '2000';
-            $config['max_width'] = '2024';
-            $config['max_height'] = '2008';
+            $config['max_size'] = '3000';
+            $config['max_width'] = '3024';
+            $config['max_height'] = '5000';
 
             $this->load->library('upload', $config);
 

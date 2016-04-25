@@ -1,0 +1,10 @@
+User-Agent: *
+Disallow: 
+Disallow: /assets
+Disallow: /composer.json
+Disallow: /contributing.md
+Disallow: /license.txt
+Disallow: /readme.rst
+Disallow: /system
+Disallow: /uploads
+

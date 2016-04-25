@@ -110,10 +110,10 @@ var chart2 = new Chart(ctx1).Line(data2,{
 var ctx2 = $("#3").get(0).getContext("2d");
 var chart3 = new Chart(ctx2).Line(data3, {
         responsive : true,
-        //scaleOverride : true,
-        //scaleSteps : 10,
-        //scaleStepWidth : 36,
-        //scaleStartValue : 0,
+        scaleOverride : true,
+        scaleSteps : 10,
+        scaleStepWidth : 36,
+        scaleStartValue : 0,
         pointDot : false
     });
 var ctx3 = $("#4").get(0).getContext("2d");

@@ -49,7 +49,7 @@ class Datos_model extends CI_Model {
 
   public function get1Semana($location)
   {
-    $query = $this->db->query("SELECT * FROM `beta_avg6h_data` WHERE sid = '$location' ORDER BY time DESC LIMIT 14");
+    $query = $this->db->query("SELECT * FROM `beta_avg12h_data` WHERE sid = '$location' ORDER BY time DESC LIMIT 14");
     if ($query->num_rows() > 0)
     {
     return $query->result();
