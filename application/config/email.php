@@ -2,8 +2,8 @@
     $config['protocol'] = 'smtp';
     $config['smtp_host'] = 'ssl://smtp.gmail.com'; //change this
     $config['smtp_port'] = '465';
-    $config['smtp_user'] = 'markusslsl3@gmail.com'; //change this
-    $config['smtp_pass'] = 'abc123...'; //change this
+    $config['smtp_user'] = ''; //change this
+    $config['smtp_pass'] = ''; //change this
     $config['mailtype'] = 'html';
     $config['charset'] = 'iso-8859-1';
     $config['wordwrap'] = TRUE;
